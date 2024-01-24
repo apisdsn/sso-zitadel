@@ -1,0 +1,38 @@
+spring:
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: http://10.1.16.204:8080
+          jwk-set-uri: http://10.1.16.204:8080/oauth/v2/keys
+      opaque-token:
+        introspection-uri: http://10.1.16.204:8080/oauth/v2/introspect
+        client-id: 239415477716189189@i2dev
+        client-secret: asFeee6jwYoSEdBOp1B3vEQFVdEMGfP5ByDQ3QbRO7fkVPuroefSGDK3uj6BmGm2
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/image_upload?serverTimezone=UTC
+    username: root
+    password:
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+  #        generate-ddl: true
+  #    hibernate:
+  #      ddl-auto: update
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 2MB
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 9090
+
+zitadel:
+  iam:
+    org:
+      project:
+        roles-attribute: urn:zitadel:iam:org:project:239413432221171719:roles

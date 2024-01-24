@@ -1,0 +1,66 @@
+spring:
+  profiles:
+    active: test
+#springdoc:
+#  oAuthFlow:
+#    authorizationUrl: http://localhost:8080/oauth/v2/authorize
+#    tokenUrl: http://localhost:8080/oauth/v2/token
+#  swagger-ui:
+#    oauth:
+#      use-basic-authentication-with-access-code-grant: true
+#      client-id: 238279537954193415@dev
+#      client-secret: MmqULwl1hAMCPcvvMURfgEuKtuX0oLdSJckdJgUdEKUKUsorH0pQ52g16lwgzhS1
+#      scopes: "openid profile email"
+#    oauth2-redirect-url: http://localhost:8000/webapp/login/oauth2/code/zitadel
+
+
+#configuration server local kantor
+#server:
+#  port: 18090
+#  servlet:
+#    context-path: /
+#spring:
+#  main:
+#    allow-circular-references: true
+#    allow-bean-definition-overriding: true
+#  jackson:
+#    serialization:
+#      write-dates-as-timestamps: false
+#    deserialization:
+#      accept-single-value-as-array: true
+#  security:
+#    oauth2:
+#      resource-server:
+#        jwt:
+#          issuer-uri: http://10.1.64.38:8080/
+#          jwk-set-uri: http://10.1.64.38:8080/oauth/v2/keys
+#      opaque-token:
+#        introspection-uri: http://10.1.64.38:8080/oauth/v2/introspect
+#        client-id: 235462660987109414@i2dev
+#        client-secret: mHf3HWjmyBKMp1aH7WPEUDBqSVDvG0Og0ru5AIkXFBd776aulEdYVTtbJ2xzKch8
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password:
+#    url: jdbc:mysql://localhost:3306/reimbursement
+#    type: com.zaxxer.hikari.HikariDataSource
+#    hikari:
+#      minimum-idle: 10
+#      maximum-pool-size: 50
+#logging:
+#  level:
+#    root: info
+#    demo: debug
+#    org:
+#      springframework:
+#        web: info
+#        security: debug
+#zitadel:
+#  iam:
+#    org:
+#      project:
+#        roles-attribute: urn:zitadel:iam:org:project:235461961712680998:roles
+#springdoc:
+#  swagger-ui:
+#    oauth:
+#      use-basic-authentication-with-access-code-grant: true

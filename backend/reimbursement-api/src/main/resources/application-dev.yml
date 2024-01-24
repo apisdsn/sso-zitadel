@@ -1,0 +1,56 @@
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      accept-single-value-as-array: true
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: ${base.oauth2.issuer.uri}
+          jwk-set-uri: ${base.oauth2.issuer.uri}/oauth/v2/keys
+      opaque-token:
+        introspection-uri: ${base.oauth2.issuer.uri}/oauth/v2/introspect
+        client-id: your client id
+        client-secret: your client secret
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: your database url mysql for reimbursement
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+logging:
+  level:
+    root: info
+    demo: debug
+    org:
+      springframework:
+        web: info
+        security: debug
+zitadel:
+  iam:
+    org:
+      project:
+        roles-attribute: urn:zitadel:iam:org:project:{your project id}:roles
+base:
+  oauth2:
+    issuer:
+      uri: your issuer uri
+server:
+  port: 18090
+  servlet:
+    context-path: /
+  error:
+    include-message: always

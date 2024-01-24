@@ -1,0 +1,62 @@
+spring:
+  main:
+    allow-circular-references: true
+    allow-bean-definition-overriding: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      accept-single-value-as-array: true
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+      file-size-threshold: 2KB
+  security:
+    oauth2:
+      resource-server:
+        jwt:
+          issuer-uri: ${base.oauth2.issuer.uri}
+          jwk-set-uri: ${base.oauth2.issuer.uri}/oauth/v2/keys
+      opaque-token:
+        introspection-uri: ${base.oauth2.issuer.uri}/oauth/v2/introspect
+        client-id: 239415625104031749@i2dev
+        client-secret: yPdYHyfEK4027P8OTYZxJUeggrxdq5miOHivChyEy60BAJkvdxfPwuRxouQuOB7M
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    url: jdbc:mysql://localhost:3306/reimbursement
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+  jpa:
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+logging:
+  level:
+    root: info
+    demo: debug
+    org:
+      springframework:
+        web: info
+        security: debug
+zitadel:
+  iam:
+    org:
+      project:
+        roles-attribute: urn:zitadel:iam:org:project:239413432221171719:roles
+base:
+  oauth2:
+    issuer:
+      uri: http://localhost:8080
+server:
+  port: 18090
+  servlet:
+    context-path: /
+  error:
+    include-message: always
